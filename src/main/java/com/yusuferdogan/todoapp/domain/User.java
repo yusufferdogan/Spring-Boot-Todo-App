@@ -11,7 +11,7 @@ import java.util.Set;
 import com.yusuferdogan.todoapp.domain.Task;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 
 public class User {
 
@@ -22,7 +22,7 @@ public class User {
     private  String email;
     private  String password;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     private Set<Task> user_tasks = new HashSet<Task>();
 
     public Long getId() {
