@@ -1,4 +1,5 @@
 package com.yusuferdogan.todoapp.controllers;
+import com.yusuferdogan.todoapp.Validators.UserValidator;
 import com.yusuferdogan.todoapp.domain.User;
 import com.yusuferdogan.todoapp.session.Session;
 import com.yusuferdogan.todoapp.services.UserService;
@@ -60,6 +61,13 @@ public class UserController {
 
     @PostMapping("/register")
     public String submitForm(@ModelAttribute("user") User user) {
+
+        if(!UserValidator.validateEmail(user.getemail())){
+            return "email_error";
+        }
+        if(!UserValidator.validatePassword(user.getPassword())){
+            return "password_error";
+        }
         if(!userService.isUserExist(user.getemail())){
             System.out.println(user);
             userService.addUser(user);
