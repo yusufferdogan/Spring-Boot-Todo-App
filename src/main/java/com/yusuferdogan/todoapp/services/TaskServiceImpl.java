@@ -21,12 +21,12 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Iterable<Task> getAllTasks() {
-        return (taskRepository.findAll());
+    public List<Task> getAllTasks() {
+        return (List<Task>) taskRepository.findAll();
     }
 
     @Override
-    public Iterable<Task> getAllTasksOfUser(String email,String password) {
+    public List<Task> getAllTasksOfUser(String email,String password) {
         List<Task> tasksOfUser = new ArrayList<Task>();
         for(Task t:taskRepository.findAll()){
             if(t.getUser().getemail().equals(email) && t.getUser().getPassword().equals(password)){

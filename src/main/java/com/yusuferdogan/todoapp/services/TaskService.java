@@ -8,9 +8,9 @@ import java.util.Optional;
 
 public interface TaskService {
 
-    Iterable<Task> getAllTasks();
+    List<Task> getAllTasks();
 
-    Iterable<Task> getAllTasksOfUser(String email,String password);
+    List<Task> getAllTasksOfUser(String email,String password);
 
     Optional<Task> getTaskById(Long id);
 

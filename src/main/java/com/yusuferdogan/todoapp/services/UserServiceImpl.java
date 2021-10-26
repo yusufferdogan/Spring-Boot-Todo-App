@@ -4,6 +4,7 @@ import com.yusuferdogan.todoapp.domain.User;
 import com.yusuferdogan.todoapp.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,8 +32,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Iterable<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<User> getAllUsers() {
+        return (List<User>) userRepository.findAll();
     }
 
     @Override
@@ -57,6 +58,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public User getUserByEmailAndPassword(String email, String password) {
         return userRepository.getByEmailAndPassword(email,password);
+    }
+
+    @Override
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
     }
 
 
