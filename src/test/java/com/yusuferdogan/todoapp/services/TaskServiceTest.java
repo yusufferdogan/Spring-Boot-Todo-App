@@ -24,27 +24,12 @@ public class TaskServiceTest {
         user.setPassword("123456");
         userService.addUser(user);
 //----------------------------------------------- init user
-        System.out.println("All users");
-        for(User u:userService.getAllUsers()){
-            System.out.println(u);
-        }
-        System.out.println("-------------------");
-
-// ---------------------------------------------- print all users
         task.setTaskName("TESTING TASK NAME ");
         task.setTaskDescription("TESTING TASK DESCRIPTION");
         task.setIsDone(false);
         task.setUser(user);
         taskService.addTask(task);
 // ---------------------------------------------- init task
-
-        System.out.println("All tasks");
-        for(Task t: taskService.getAllTasks()){
-            System.out.println(t);
-        }
-        System.out.println("----------------------");
-// ---------------------------------------------- print all tasks
-
     }
 
     @AfterAll

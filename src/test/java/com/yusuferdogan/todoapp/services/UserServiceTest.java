@@ -23,24 +23,14 @@ public class UserServiceTest {
 
     @BeforeAll
     void setUp() {
-
         user.setEmail("asdfg@gmail.com");
         user.setPassword("123456");
         userService.addUser(user);
-        System.out.println("All users");
-        for(User u:userService.getAllUsers()){
-            System.out.println(u);
-        }
-        System.out.println("-------------------");
     }
 
     @AfterAll
     void dispose(){
         userService.removeUser(user.getId());
-        System.out.println("All users");
-        for(User u:userService.getAllUsers()){
-            System.out.println(u);
-        }
     }
 
     @Test
