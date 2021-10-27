@@ -8,3 +8,6 @@ RUNNING TESTS
 
 RUNNING APP WITH DEPENDENCIES
 ./mvnw spring-boot:run
+
+Project is deployed to :
+https://spring-boot-todo-app-yusuf.herokuapp.com
